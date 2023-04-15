@@ -10,11 +10,30 @@ Canvas.width = window.innerWidth;
 // ctx.closePath();
 // ctx.stroke();
 
-function drawShape() {
-    ctx.beginPath();
-    ctx.moveTo(50,200);
-    ctx.lineTo(450,150);
-    ctx.closePath();
-    ctx.stroke();
+function drawShape(radius) {
+  ctx.beginPath();
+  ctx.save();
+  ctx.translate(Canvas.width/2,Canvas.height/2);
+  ctx.moveTo(0,0);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  ctx.rotate(Math.PI / 3);
+  ctx.lineTo(0,0 - radius);
+  
+  ctx.restore()
+  ctx.closePath();
+  ctx.stroke();
+
 }
-drawShape()
+drawShape(100)
