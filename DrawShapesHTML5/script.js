@@ -3,6 +3,10 @@ const ctx = Canvas.getContext("2d")
 Canvas.height = window.innerHeight;
 Canvas.width = window.innerWidth;
 
+//coloring
+ctx.fillStyle = 'red';
+ctx.lineWidth = 10;
+
 // add insight the function
 // ctx.beginPath();
 // ctx.moveTo(Canvas.width/2, Canvas.height/2);
@@ -39,11 +43,38 @@ Canvas.width = window.innerWidth;
 // }
 //drawShape(100)
 
-//STAT SHAP
-function drawShape(radius, inset,n) {
+//STAr SHAPe
+// function drawShape(radius, inset,n) {
+//     ctx.beginPath();
+//     ctx.save();
+//     ctx.translate(Canvas.width/2,Canvas.height/2);
+//     ctx.moveTo(0,0);
+
+//     for (let i=0; i< n ; i++){
+//         ctx.lineTo(0,0 - radius);
+//     ctx.rotate(Math.PI / n);
+//     ctx.lineTo(0,0 - (radius * inset));
+//     ctx.rotate(Math.PI / n);
+//     }
+
+    
+
+
+    
+//     ctx.restore()
+//    // ctx.closePath();
+//     ctx.stroke();
+//     ctx.fill(); // coloring
+  
+//   }
+// drawShape(100, 0.5, 5) //1 change size big and small 2) shape changing 3) radius multi connecton on circle many attach line
+
+//adding eventListener  
+
+function drawShape(x,y,radius, inset,n) {
     ctx.beginPath();
     ctx.save();
-    ctx.translate(Canvas.width/2,Canvas.height/2);
+    ctx.translate(x, y);
     ctx.moveTo(0,0);
 
     for (let i=0; i< n ; i++){
@@ -60,6 +91,12 @@ function drawShape(radius, inset,n) {
     ctx.restore()
    // ctx.closePath();
     ctx.stroke();
+    ctx.fill(); // coloring
   
   }
-drawShape(100, 0.5, 5)
+
+//   drawShape(100, 0.5, 5)
+
+window.addEventListener('mousemove', function(e){
+    drawShape(e.x, e.y, 150 ,0.5, 7)
+})
