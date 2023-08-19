@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(142, 208, 150);
+
+}
+#panel{
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+}
+#ptop{
+    width: 100%;
+    height: 100px;
+    background-color: #f0ab8b;
+}
+#pbtm{
+
+}
+.bubble{
+    width: 40px;
+    height: 40px;
+    background-color: #650e0e;
+    border-radius: 50%;
+}
