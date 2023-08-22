@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="main">
+        <h1 style="margin: 20px;">Register Page</h1>
+        <div class="" style="margin: 20px;">
+            <label for="">Name</label>
+            <input type="text" id="name">
+        </div>
+        <div class="" style="margin: 20px;">
+            <label for="">Email</label>
+            <input type="email" id="email">
+        </div>
+        <div class="" style="margin: 20px;">
+            <label for="">Password</label>
+            <input type="password" id="password">
+        </div>
+        <div class="btn" style="display: flex; gap: 20px; align-items: center; justify-content: center;">
+            <button onclick="SaveData()">Submit</button>
+        <button type="reset" onclick="Reset()">Reset</button>
+        </div>
+        
+    </div>  
+    
+
+                          <!-- Register Page  -->
+      <script>
+        
+
+        function SaveData(){
+        
+       let name = document.getElementById("name").value;
+       let email = document.getElementById("email").value;
+       let password = document.getElementById("password").value;
+
+
+            // localStorage.setItem("name",name)
+            // localStorage.setItem("email",email)
+            // localStorage.setItem("password",password)
+
+            let record = new Array()
+            
+            record = JSON.parse(localStorage.getItem("Abhay"))?JSON.parse(localStorage.getItem("Abhay")):[]
+            
+            if(record.some((v)=> v.Email == email )){
+                alert("duplicate data");
+            }else{
+                record.push({
+                    "Name":name,
+                    "Email":email,
+                    "Password":password
+                })
+                localStorage.setItem("Abhay",JSON.stringify(record))
+            }
+            
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+
+        }
+        
+
+//         function Reset() {
+//     document.getElementById("name").value = "";
+//     document.getElementById("email").value = "";
+//     document.getElementById("password").value = "";
+// }
+      </script> 
+
+
+
+          
+</body>
+</html>
